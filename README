@@ -6,11 +6,18 @@ Introduction
 Example Use
 -----------
 
-    Use composer: composer require dkeysoft/mailer
+    Use composer:
+        composer require dkeysoft/mailer
 
-    The first, You should rewrite "api_key" in config.php.
+    If you use sparkpost, you need next:
+        composer require guzzlehttp/guzzle
+        composer require php-http/guzzle6-adapter
+        composer require sparkpost/sparkpost
 
-    The second,
+
+    You should rewrite "api_key" in config.php.
+
+    And then your code might look like this:
 
         use dkeysoft\src\Recipient;
         use dkeysoft\src\services\spark\Service as Spark;
