@@ -1,8 +1,8 @@
 <?php
 
-namespace app\commands\mailer\services\spark;
+namespace dkeysoft\mailer\services\spark;
 
-use app\commands\mailer\services\AbstractService;
+use dkeysoft\mailer\services\AbstractService;
 use GuzzleHttp\Client;
 use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
 use SparkPost\SparkPost;

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\commands\mailer;
+namespace dkeysoft\mailer;
 
 class Recipient
 {

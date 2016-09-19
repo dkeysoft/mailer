@@ -1,9 +1,9 @@
 <?php
 
-namespace app\commands\mailer\services\spark;
+namespace dkeysoft\mailer\services\spark;
 
-use app\commands\mailer\Recipient;
-use app\commands\mailer\services\AbstractRecipientDecorator;
+use dkeysoft\mailer\Recipient;
+use dkeysoft\mailer\services\AbstractRecipientDecorator;
 
 class RecipientDecorator extends AbstractRecipientDecorator
 {

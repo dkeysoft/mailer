@@ -1,8 +1,8 @@
 <?php
 
-namespace app\commands\mailer\services;
+namespace dkeysoft\mailer\services;
 
-use app\commands\mailer\Recipient;
+use dkeysoft\mailer\Recipient;
 
 abstract class AbstractService
 {
