@@ -1,0 +1,68 @@
+Introduction
+------------
+    This extension let you have one easy interface to sent letters using different web services.
+
+
+Example Use
+-----------
+
+    Use composer: composer require dkeysoft/mailer
+
+    The first, You should rewrite "api_key" in config.php.
+
+    The second,
+
+        use dkeysoft\src\Recipient;
+        use dkeysoft\src\services\spark\Service as Spark;
+
+        $service = new Spark();
+        $recipient = new Recipient();
+        $recipients = [];
+
+        $from_name = 'My company name';
+        $from_email = 'info@example.com';
+        $subject = 'Test subject';
+        $template_html = '<html><body><h1>Test HTML - {{name}} - {{code}} --- from {{company}}</h1></body></html>';
+        $template_text = 'Test Text';
+
+        $service
+            ->setSubject($subject)
+            ->setFromName($from_name)
+            ->setFromEmail($from_email)
+            ->setTemplateHtml($template_html)
+            ->setTemplateText($template_text)
+            ->setSubstitutionData([
+                'company' => 'My company name (substitution)'
+            ]);
+
+        $recipient
+            ->setName('UserOne')
+            ->setEmail('userone@example.com')
+            ->setSubstitutionData([
+                'name' => 'My name One',
+                'code' => 'Code123123'
+            ]);
+        $recipients[] = clone $recipient;
+
+
+        $recipient
+            ->setName('UserTwo')
+            ->setEmail('usertwo@example.com')
+            ->setSubstitutionData([
+                'name' => 'My name Two',
+                'code' => 'Code3333'
+            ]);
+        $recipients[] = $recipient;
+
+
+        $service
+            ->setRecipients($recipients)
+            ->build();
+
+
+        $service->send();
+
+
+
+License (BSD License)
+---------------------
