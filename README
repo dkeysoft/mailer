@@ -44,7 +44,6 @@ Example Use
             ]);
         $recipients[] = clone $recipient;
 
-
         $recipient
             ->setName('UserTwo')
             ->setEmail('usertwo@example.com')
@@ -54,15 +53,8 @@ Example Use
             ]);
         $recipients[] = $recipient;
 
-
         $service
             ->setRecipients($recipients)
             ->build();
 
-
         $service->send();
-
-
-
-License (BSD License)
----------------------
